@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body, html, main {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #000; }
+
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; }
+
+nav a {
+  color: white;
+  padding: .5rem; }
+
+.screen {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+
+.screen:target {
+  z-index: 999; }
+
+.screen > .content {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.screen:target > .content {
+  animation: open 1s forwards; }
+
+@keyframes open {
+  from {
+    right: 100vw; }
+  to {
+    right: 0; } }
+
+[data-previous="#screen1"],
+#screen1 > .content {
+  background: green; }
+
+[data-previous="#screen2"],
+#screen2 > .content {
+  background: blue; }
+
+[data-previous="#screen3"],
+#screen3 > .content {
+  background: red; }
