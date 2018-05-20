@@ -48,9 +48,9 @@ nav a {
 
 @keyframes open {
   from {
-    top: 100vw; }
+    right: -100vw; }
   to {
-    top: 0; } }
+    right: 0; } }
 
 [data-previous="#screen1"],
 #screen1 > .content {
